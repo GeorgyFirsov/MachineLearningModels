@@ -6,7 +6,9 @@ You can look for some examples in files Example<model>.ipynb.
 
 ### Usage
 
-Usage of these models is really simple:
+Usage of these models is really simple - you just need to import required model class and fit it with your data.
+
+#### Generalized linear regression
 ```python
 from MachineLearning.LinearRegression import LinearRegression
 
