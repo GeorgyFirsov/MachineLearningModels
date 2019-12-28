@@ -11,9 +11,12 @@ Usage of these models is really simple - you just need to import required model 
 #### Generalized linear regression
 ```python
 from MachineLearning.LinearRegression import LinearRegression
+from MachineLearning.Metrics import mean_squared_error
 
 model = LinearRegression(degree=3)
 
 model.fit(X_train, y_train)
-model.predict(X_test)
+y_pred = model.predict(X_test)
+
+print(mean_squared_error(y_pred, y_test))
 ```
