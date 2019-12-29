@@ -2,7 +2,11 @@
 
 This repository contains machine learning models implementation in Python 3.
 
-You can look for some examples in files Example<model>.ipynb.
+You can look for some examples in files Example\<model\>.ipynb.
+
+### Currently implemented
+- [Generalized linear regression (with polynomials)](./ExampleLinearRegression.ipynb)
+- [Multiple linear regression](./ExampleMultipleLinearRegression.ipynb)
 
 ### Usage
 
