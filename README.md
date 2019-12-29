@@ -20,3 +20,16 @@ y_pred = model.predict(X_test)
 
 print(mean_squared_error(y_pred, y_test))
 ```
+
+#### Multiple linear regression
+```python
+from MachineLearning.MultipleLinearRegression import MultipleLinearRegression
+from MachineLearning.Metrics import mean_squared_error
+
+model = MultipleLinearRegression()
+
+model.fit(X_train, y_train)
+y_pred = model.predict(X_test)
+
+print(mean_squared_error(y_pred, y_test))
+```
