@@ -1,4 +1,24 @@
+from dataclasses import dataclass
+
 import numpy as np
+
+
+@dataclass
+class LinearRegressionParameters:
+    """Class represents hyper-parameters of
+    generalized linear regression model.
+    """
+    coefficients: tuple
+    functions: tuple
+
+
+@dataclass
+class MultipleLinearRegressionParameters:
+    """Class represents hyper-parameters of
+    multiple linear regression model.
+    """
+    coefficients: tuple
+    functions: tuple
 
 
 def generate_polynomials(max_degree: int) -> np.ndarray:
@@ -35,3 +55,17 @@ def design_matrix(functions: np.ndarray, x_values: np.ndarray) -> np.ndarray:
     return np.array([
         np.array([y(x) for y in functions]) for x in x_values
     ])
+
+
+def design_matrix_multiple(x_values: np.ndarray) -> np.ndarray:
+    """Calculates design matrix for multiple linear regression
+    model on certain observations
+
+    :param x_values: observations of variables
+    :return: design matrix as numpy array
+    """
+    return np.insert(
+        np.array([
+            np.array([xi for xi in x]) for x in x_values
+        ]).T, 0, 1, axis=1
+    )

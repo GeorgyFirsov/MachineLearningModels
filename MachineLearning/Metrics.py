@@ -13,7 +13,7 @@ def mean_squared_error(y_pred: np.ndarray, y_test: np.ndarray) -> float:
     if len(y_pred) != len(y_test):
         raise ValueError("Predicted and test values must have equal shape")
 
-    return (sum((y_p - y_t) ** 2 for y_p, y_t in zip(y_pred, y_test)) / len(y_pred))[0]
+    return sum((y_p - y_t) ** 2 for y_p, y_t in zip(y_pred, y_test)) / len(y_pred)
 
 
 def root_mean_squared_error(y_pred: np.ndarray, y_test: np.ndarray) -> float:
@@ -38,4 +38,4 @@ def mean_absolute_error(y_pred: np.ndarray, y_test: np.ndarray) -> float:
     if len(y_pred) != len(y_test):
         raise ValueError("Predicted and test values must have equal shape")
 
-    return (sum(np.abs(y_p - y_t) for y_p, y_t in zip(y_pred, y_test)) / len(y_pred))[0]
+    return sum(np.abs(y_p - y_t) for y_p, y_t in zip(y_pred, y_test)) / len(y_pred)
